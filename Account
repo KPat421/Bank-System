@@ -1,0 +1,118 @@
+package edu.manhattan;
+import java.util.*;
+
+public class Account {
+	//Attributes
+		String ownername = "";
+		String ownersocial = "";
+		String accounttype = "";
+		String accountnumber = "";
+		double balance = 0;
+		String cardnumber = "";
+		String pin = "";
+	//Setter Functions
+		void setOwnerName(String ownernameIn) {
+			ownername = ownernameIn;
+		}
+		void setOwnerSocial(String ownersocialIn) {
+			ownersocial = ownersocialIn;
+		}
+		void setAccountType(String accounttypeIn) {
+			switch (accounttypeIn) {
+			case "Checking":
+				accounttype = "Checking";
+				break;
+			case "Savings":
+				accounttype = "Savings";
+				break;
+			default:
+				System.out.println("Invalid Account Type");
+			}
+		}
+		void setAccountNumber(String accountnumberIn) {
+			accountnumber = accountnumberIn;
+		}
+		void setBalance(double balanceIn) {
+			balance = balanceIn;
+		}
+		void setCardNumber(String cardnumberIn) {
+			cardnumber = cardnumberIn;
+		}
+		void setPin(String pinIn) {
+			pin = pinIn;
+		}
+	//Getter Functions
+		String getOwnerName() {
+			return ownername;
+		}
+		String getOwnerSocial() {
+			return ownersocial;
+		}
+		String getAccountType() {
+			return accounttype;
+		}
+		String getAccountNumber() {
+			return accountnumber;
+		}
+		double getBalance() {
+			return balance;
+		}
+		String getCardNumber() {
+			return cardnumber;
+		}
+		String getPin() {
+			return pin;
+		}
+	//Deposit Function
+		void deposit(double depositamount) {
+			balance += depositamount;
+		}
+	//Withdraw Function
+		void withdraw(double withdrawamount) {
+			balance -= withdrawamount;
+		}
+	//Check Balance Function
+		void checkBalance() {
+			System.out.println("The balance in this account is $" + balance);
+		}
+	//Show Info Function
+		void showInfo() {
+			System.out.println("Customer Name: " + ownername);
+			System.out.println("Customer Social: " + ownersocial);
+			System.out.println("Account Type: " + accounttype);
+			System.out.println("Account Number: " + accountnumber);
+			System.out.println("Balance: $" + balance);
+			System.out.println("Credit Card Number: " + cardnumber);
+			System.out.println("PIN: " + pin);
+		}
+	//Show Menu Function
+		void showMenu() {
+			System.out.println("Welcome to the banking system!");
+			System.out.println("Press A for deposit");
+			System.out.println("Press B for withdraw");
+			System.out.println("Press C for check balance");
+			System.out.println("Press D for show info");
+				Scanner scanner = new Scanner(System.in);
+				char selection = scanner.next().charAt(0);
+				
+			switch (selection) {
+			case 'A':
+				System.out.println("Enter deposit amount: ");
+				deposit(scanner.nextDouble());
+				break;
+			case 'B':
+				System.out.println("Enter withdraw amount: ");
+				withdraw(scanner.nextDouble());
+				break;
+			case 'C':
+				checkBalance();
+				break;
+			case 'D':
+				showInfo();
+				break;
+			default:
+				System.out.println("Invalid Selection");
+			}
+				scanner.close();
+		}
+}

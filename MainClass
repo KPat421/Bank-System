@@ -1,0 +1,14 @@
+package edu.manhattan;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Bank bank1 = new Bank();
+			bank1.setBankName("Bank of America");
+			bank1.setLicenseNumber("000585413");
+			bank1.getBankName();
+			bank1.getLicenseNumber();
+			
+			bank1.addAccount();
+	}
+}

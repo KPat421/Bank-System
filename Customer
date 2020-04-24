@@ -1,0 +1,28 @@
+package edu.manhattan;
+
+public class Customer {
+	//Attributes
+		String customername = "";
+		String social = "";
+		String accounts = "";
+	//Setter Functions
+		void setCustomerName(String customernameIn) {
+			customername = customernameIn;
+		}
+		void setSocialSecurityNumber(String socialIn) {
+			social = socialIn;
+		}
+		void setAccounts(String accountsIn) {
+			accounts += accountsIn;
+		}
+	//Getter Functions
+		String getCustomerName() {
+			return customername;
+		}
+		String getSocialSecurityNumber() {
+			return social;
+		}
+		String getAccounts() {
+			return accounts;
+		}
+}

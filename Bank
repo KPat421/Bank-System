@@ -1,0 +1,56 @@
+package edu.manhattan;
+import java.util.*;
+
+public class Bank {
+	//Attributes
+		String bankname = "";
+		String license = "";
+	//Setter Functions
+		void setBankName(String banknameIn) {
+			bankname = banknameIn;
+		}
+		void setLicenseNumber(String licenseIn) {
+			license = licenseIn;
+		}
+	//Getter Functions
+		String getBankName() {
+			return bankname;
+		}
+		String getLicenseNumber() {
+			return license;
+		}
+	//Add Account Function
+		void addAccount() {
+			Scanner scanner = new Scanner(System.in);
+			Customer customer = new Customer();
+			Account account = new Account();
+					System.out.println("Enter name: ");
+				customer.setCustomerName(scanner.nextLine());
+				account.setOwnerName(customer.getCustomerName());
+					System.out.println("Enter social security number: ");
+				customer.setSocialSecurityNumber(scanner.nextLine());
+				account.setOwnerSocial(customer.getSocialSecurityNumber());
+					System.out.println("Enter Checking or Savings to select account type: ");
+				account.setAccountType(scanner.nextLine());
+					System.out.println("Enter a six digit account number: ");
+				account.setAccountNumber(scanner.nextLine());
+				customer.setAccounts(account.getAccountNumber());
+					System.out.println("Enter intial deposit amount: ");
+				account.setBalance(scanner.nextDouble());
+				scanner.nextLine();
+					System.out.println("Enter credit card number: ");
+				account.setCardNumber(scanner.nextLine());
+					System.out.println("Enter a four digit PIN: ");
+				account.setPin(scanner.nextLine());
+					System.out.println("");
+				//For Testing
+					customer.getCustomerName();
+					customer.getSocialSecurityNumber();
+					customer.getAccounts();
+					System.out.println("");
+					account.showMenu();
+					System.out.println("");
+					account.showInfo();
+			scanner.close();
+		}
+}
